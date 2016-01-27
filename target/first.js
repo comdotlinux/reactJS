@@ -1,19 +1,19 @@
 var FirstComponent = React.createClass({
 	render: function () {
 		return React.createElement(
-			"div",
+			'div',
 			null,
-			" ",
+			' ',
 			React.createElement(
-				"h1",
+				'h1',
 				null,
-				" ",
+				' ',
 				this.props.now,
-				" "
+				' '
 			)
 		);
 	}
 });
 
 ReactDOM.render(React.createElement(FirstComponent, { now: new Date().toString()
-}), document.body);
+}), document.getElementById('headerOne'));
