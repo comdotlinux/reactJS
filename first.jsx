@@ -6,4 +6,4 @@ var FirstComponent = React.createClass({
 	}
 });
 
-ReactDOM.render(<FirstComponent now={(new Date()).toString()}/>,document.body);
+React.render(<FirstComponent now={(new Date()).toString()}/>,document.body);
