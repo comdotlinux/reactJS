@@ -1,7 +1,19 @@
 var FirstComponent = React.createClass({
 	render: function () {
-		return '<div><h1>{this.props.now}</h1></div>';
+		return React.createElement(
+			"div",
+			null,
+			" ",
+			React.createElement(
+				"h1",
+				null,
+				" ",
+				this.props.now,
+				" "
+			)
+		);
 	}
 });
 
-ReactDOM.render('<FirstComponent now = {(new Date()).toString()}/>', document.body);
+ReactDOM.render(React.createElement(FirstComponent, { now: new Date().toString()
+}), document.body);
