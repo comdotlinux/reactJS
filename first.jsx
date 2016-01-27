@@ -1,3 +1,6 @@
+var ReactDOM = require('react-dom');
+var React = require('react');
+
 var FirstComponent = React.createClass({
 	render:function(){
 		return <div>
@@ -6,4 +9,4 @@ var FirstComponent = React.createClass({
 	}
 });
 
-React.renderComponent(<FirstComponent now={new Date()}></FirstComponent>,document.body);
+ReactDOM.render(<FirstComponent now={new Date()}/>,document.body);
