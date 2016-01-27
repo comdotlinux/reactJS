@@ -1,26 +1,18 @@
-function Calculator() {
+var Calculator = {
 
-    var total = 0;
-
-    var add = function (val) {
-        total += val;
-    }
-
-    this.subtract = function (val) {
-        total -= val;
-    }
-
-    this.getTotal = function () {
-        return total;
-    }
-
-    return {
-        add: add
+    total: 0,
+    add: function (val) {
+        this.total += val;
+    },
+    subtract: function (val) {
+        this.total -= val;
+    },
+    getTotal: function () {
+        return this.total;
     }
 }
 
-var calc = new Calculator();
-calc.add(50);
-calc.subtract(10);
-console.log(calc.getTotal());
-console.log(calc.total);
+
+Calculator.add(50);
+Calculator.subtract(10);
+console.log(Calculator.getTotal());
