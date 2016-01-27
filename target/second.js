@@ -13,7 +13,7 @@
 					return React.createElement(Movie, { name: movie
 					});
 				}),
-				'; '
+				' '
 			);
 		}
 	});
