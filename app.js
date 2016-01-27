@@ -20,7 +20,7 @@ function Calculator() {
 }
 
 var calc = new Calculator();
-calc.add(50)
-calc.subtract(10)
+calc.add(50);
+calc.subtract(10);
 console.log(calc.getTotal());
 console.log(calc.total);
