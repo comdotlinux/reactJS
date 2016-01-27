@@ -1,0 +1,10 @@
+{
+	"name": "ReactJS",
+	"version": "1.0.0",
+	"babel": {
+		"presets": ["react"]
+	},
+	"devDependencies": {
+		"babel-cli": "^6.4.5"
+	}
+}
