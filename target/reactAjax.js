@@ -1,10 +1,17 @@
+var Highlight = {
+	componentDidUpdate: function () {
+		var node = $(this.getDOMNode());
+		node.slideUp();
+		node.slideDown();
+	}
+};
 var AjaxComponent = React.createClass({
 	getInitialState: function () {
 		return {};
 	},
 	componentDidMount: function () {
 		var self = this;
-		$.get('https://api.github.com/users/' + this.props.login, function (data) {
+		$.get('http://jsonplaceholder.typicode.com/photos/' + this.props.login, function (data) {
 			self.setState(data);
 		});
 	},
@@ -12,21 +19,16 @@ var AjaxComponent = React.createClass({
 		return React.createElement(
 			"div",
 			null,
-			React.createElement("img", { src: this.state.avatar_url, width: "80" }),
+			React.createElement("img", { src: this.state.thumbnailUrl, width: "80" }),
 			React.createElement(
 				"h3",
 				null,
-				this.state.name
+				this.state.title
 			),
 			React.createElement(
 				"h4",
 				null,
-				this.state.login
-			),
-			React.createElement(
-				"h4",
-				null,
-				this.state.repos_url
+				this.state.albumId
 			)
 		);
 	}
@@ -73,7 +75,8 @@ var MainComponent = React.createClass({
 			React.createElement("hr", null),
 			githubProfiles
 		);
-	}
+	},
+	mixins: [Highlight]
 });
 
 ReactDOM.render(React.createElement(MainComponent, null), document.getElementById('headerThree'));

@@ -1,3 +1,10 @@
+var Highlight={
+	componentDidUpdate:function(){
+		var node = $(this.getDOMNode());
+		node.slideUp();
+		node.slideDown();
+	}
+}
 var AjaxComponent = React.createClass({
 	getInitialState:function(){
 		return {}
@@ -5,7 +12,7 @@ var AjaxComponent = React.createClass({
 	componentDidMount:function(){
 		var self = this;
 		$.get(
-			'https://api.github.com/users/' +this.props.login,
+			'http://jsonplaceholder.typicode.com/photos/' +this.props.login,
 			function(data){
 				self.setState(data);
 			}
@@ -13,10 +20,9 @@ var AjaxComponent = React.createClass({
 	},
 	render: function(){
 		return <div>
-			<img src={this.state.avatar_url} width="80" />
-			<h3>{this.state.name}</h3>
-			<h4>{this.state.login}</h4>
-			<h4>{this.state.repos_url}</h4>
+			<img src={this.state.thumbnailUrl} width="80" />
+			<h3>{this.state.title}</h3>
+			<h4>{this.state.albumId}</h4>
 		</div>
 	}
 });
@@ -58,7 +64,8 @@ var MainComponent = React.createClass({
 				{githubProfiles}
 			</div>
 		);
-	}
+	},
+	mixins:[Highlight]
 });
 
 ReactDOM.render(<MainComponent/>, document.getElementById('headerThree'));
