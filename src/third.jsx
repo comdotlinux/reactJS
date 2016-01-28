@@ -21,7 +21,7 @@ var AjaxComponent = React.createClass({
 	}
 });
 
-var FormComponent = React.createCalss({
+var FormComponent = React.createClass({
 	render:function(){
 		return (
 			<form onSubmit="{this.handleEvent}">
@@ -39,5 +39,17 @@ var FormComponent = React.createCalss({
 	}
 });
 
-//var MainComponent = React.createC
+var MainComponent = React.createClass({
+	getInitialState:function(){
+		return {logins:[]}
+	},
+	addAjaxComponent:function(login){
+		this.setState({logins:this.state.logins.concat(login)});
+	},
+	render:function(){
+		var githubProfiles = this.state.logins.map(function(){
+			return (<AjaxComponent login={login}/>);
+		});
+	}
+});
 //ReactDOM.render(<Ajax)
