@@ -43,13 +43,22 @@ var MainComponent = React.createClass({
 	getInitialState:function(){
 		return {logins:[]}
 	},
-	addAjaxComponent:function(login){
+	changeValue:function(login){
 		this.setState({logins:this.state.logins.concat(login)});
 	},
 	render:function(){
 		var githubProfiles = this.state.logins.map(function(){
 			return (<AjaxComponent login={login}/>);
 		});
+		
+		return (
+			<div>
+				<FormComponent addAjaxComponent={this.changeValue}></FormComponent>
+				<hr/>
+				{githubProfiles}
+			</div>
+		);
 	}
 });
-//ReactDOM.render(<Ajax)
+
+ReactDOM.render(<MainComponent></MainComponent>, document.getElementById('headerThree'));
