@@ -19,7 +19,7 @@
 				),
 				' ',
 				this.props.movies.map(function (movie) {
-					return React.createElement(Movie, { name: movie });
+					return React.createElement(Movie, { name: movie, key: movie, id: movie });
 				})
 			);
 		}
@@ -27,7 +27,7 @@
 
 	var Movie = React.createClass({
 		propTypes: {
-			movies: React.PropTypes.string.isRequired
+			movie: React.PropTypes.string.isRequired
 		},
 		render: function () {
 			return React.createElement(

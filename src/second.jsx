@@ -10,7 +10,7 @@
 		render: function () {
 			return <div><span>Deafult Movie :: {this.state.answer}</span> {
 				this.props.movies.map(function (movie) {
-					return <Movie name = {movie}/>
+					return <Movie name = {movie} key={movie} id={movie}/>
 				})
 			}</div>;
 		}
@@ -18,7 +18,7 @@
 
 	var Movie = React.createClass({
 		propTypes: {
-			movies: React.PropTypes.string.isRequired
+			movie: React.PropTypes.string.isRequired
 		},
 		render: function () {
 			return <div> <h4> {

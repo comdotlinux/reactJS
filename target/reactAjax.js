@@ -63,7 +63,7 @@ var MainComponent = React.createClass({
 	},
 	render: function () {
 		var githubProfiles = this.state.logins.map(function (login) {
-			return React.createElement(AjaxComponent, { login: login });
+			return React.createElement(AjaxComponent, { login: login, key: login, id: login });
 		});
 
 		return React.createElement(
