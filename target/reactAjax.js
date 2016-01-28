@@ -48,7 +48,7 @@ var FormComponent = React.createClass({
 	handleEvent: function (e) {
 
 		e.preventDefault();
-		var loginInput = React.findDOMNode(this.refs.login);
+		var loginInput = ReactDOM.findDOMNode(this.refs.login);
 		this.props.addAjaxComponent(loginInput.value);
 		loginInput.value = '';
 	}
