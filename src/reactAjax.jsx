@@ -50,7 +50,10 @@ var MainComponent = React.createClass({
 		return {logins:[]}
 	},
 	changeValue:function(login){
-		this.setState({logins:this.state.logins.concat(login)});
+		window.setInterval(function(){
+			this.setState({logins:this.state.logins.concat(login)});
+		}.bind(this),2000);
+		
 	},
 	render:function(){
 		var githubProfiles = this.state.logins.map(function(login){
