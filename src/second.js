@@ -4,8 +4,11 @@
 		propTypes: {
 			movies: React.PropTypes.array.isRequired
 		},
+		getInitialState:function(){
+			return {answer:'Star Wars Episode VI'}	
+		},
 		render: function () {
-			return <div > {
+			return <div ><span>Deafult Movie :: {this.state.answer}</span> {
 				this.props.movies.map(function (movie) {
 					return <Movie name = {
 						movie
