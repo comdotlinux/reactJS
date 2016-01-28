@@ -5,7 +5,7 @@ var AjaxComponent = React.createClass({
 	componentDidMount:function(){
 		var self = this;
 		$.get(
-			'https://api.github.com/users/' + this.props.login,
+			'https://api.github.com/users/' +this.props.login,
 			function(data){
 				self.setState(data);
 			}
@@ -24,7 +24,7 @@ var AjaxComponent = React.createClass({
 var FormComponent = React.createClass({
 	render:function(){
 		return (
-			<form onSubmit="{this.handleEvent}">
+			<form onSubmit={this.handleEvent}>
 				<input type="text" placeholder="Github login" ref="login"></input>
 				<button>Submit</button>
 			</form>
@@ -33,7 +33,7 @@ var FormComponent = React.createClass({
 	handleEvent:function(e){
 		
 		e.preventDefault();
-		var loginInput = React.findDOMNode("login");
+		var loginInput = React.findDOMNode(this.refs.login);
 		this.props.addAjaxComponent(loginInput.value);
 		loginInput.value = '';
 	}
@@ -47,13 +47,13 @@ var MainComponent = React.createClass({
 		this.setState({logins:this.state.logins.concat(login)});
 	},
 	render:function(){
-		var githubProfiles = this.state.logins.map(function(){
+		var githubProfiles = this.state.logins.map(function(login){
 			return (<AjaxComponent login={login}/>);
 		});
 		
 		return (
 			<div>
-				<FormComponent addAjaxComponent={this.changeValue}></FormComponent>
+				<FormComponent addAjaxComponent={this.changeValue}/>
 				<hr/>
 				{githubProfiles}
 			</div>
@@ -61,4 +61,4 @@ var MainComponent = React.createClass({
 	}
 });
 
-ReactDOM.render(<MainComponent></MainComponent>, document.getElementById('headerThree'));
+ReactDOM.render(<MainComponent/>, document.getElementById('headerThree'));
