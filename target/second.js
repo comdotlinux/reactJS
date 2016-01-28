@@ -19,10 +19,8 @@
 				),
 				' ',
 				this.props.movies.map(function (movie) {
-					return React.createElement(Movie, { name: movie
-					});
-				}),
-				' '
+					return React.createElement(Movie, { name: movie });
+				})
 			);
 		}
 	});
