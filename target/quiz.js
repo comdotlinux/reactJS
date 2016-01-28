@@ -45,5 +45,5 @@
 		}
 	});
 
-	ReactDOM.render(React.createElement(Quiz, { movies: ['Dilwale', 'Star Wars', 'Mafia'] }), document.getElementById('headerTwo'));
+	ReactDOM.render(React.createElement(Quiz, { movies: ['Dilwale', 'Star Wars', 'Mafia'] }), document.getElementById('quizPlaceholder'));
 })();

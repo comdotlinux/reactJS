@@ -61,9 +61,10 @@ var MainComponent = React.createClass({
 		return { logins: [] };
 	},
 	changeValue: function (login) {
-		window.setInterval(function () {
+		this.setState({ logins: this.state.logins.concat(login) });
+		/*window.setInterval(function () {
 			this.setState({ logins: this.state.logins.concat(login) });
-		}.bind(this), 2000);
+		}.bind(this), 2000);*/
 	},
 	render: function () {
 		var githubProfiles = this.state.logins.map(function (login) {
@@ -81,4 +82,4 @@ var MainComponent = React.createClass({
 	mixins: [Highlight]
 });
 
-ReactDOM.render(React.createElement(MainComponent, null), document.getElementById('headerThree'));
+ReactDOM.render(React.createElement(MainComponent, null), document.getElementById('reactAjaxPlaceholder'));

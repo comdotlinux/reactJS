@@ -12,4 +12,4 @@ var FirstComponent = React.createClass({
 	}
 });
 
-ReactDOM.render(React.createElement(FirstComponent, { now: new Date().toString() }), document.getElementById('headerOne'));
+ReactDOM.render(React.createElement(FirstComponent, { now: new Date().toString() }), document.getElementById('helloReactWithDatePlaceholder'));

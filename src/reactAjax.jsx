@@ -71,4 +71,4 @@ var MainComponent = React.createClass({
 	mixins:[Highlight]
 });
 
-ReactDOM.render(<MainComponent/>, document.getElementById('headerThree'));
+ReactDOM.render(<MainComponent/>, document.getElementById('reactAjaxPlaceholder'));

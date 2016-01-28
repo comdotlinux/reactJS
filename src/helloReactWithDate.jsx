@@ -7,4 +7,4 @@ var FirstComponent = React.createClass({
 ReactDOM.render(
 	<FirstComponent now = {
 			(new Date()).toString()}/>,
-	document.getElementById('headerOne'));
+	document.getElementById('helloReactWithDatePlaceholder'));
