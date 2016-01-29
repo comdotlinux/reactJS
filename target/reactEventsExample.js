@@ -9,4 +9,4 @@ var Timer = React.createClass({
 
 ReactDOM.render(React.createElement(Timer, { callOnInterval: function () {
 		console.log(new Date());
-	}, interval: {10000}), document.getElementById('reactEventsExamplePlaceholder'));
+	}, interval: 10000 }), document.getElementById('reactAjaxExamplePlaceholder'));
