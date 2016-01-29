@@ -1,6 +1,26 @@
 (function () {
     'use strict';
 
+    var Movie = React.createClass({
+        propTypes: {
+            title: React.PropTypes.string.isRequired
+        },
+        handleClick: function () {
+            this.props.onMovieSelected(this.props.title);
+        },
+        render: function () {
+            return React.createElement(
+                'div',
+                { onClick: this.handleClick, className: 'answer' },
+                React.createElement(
+                    'h4',
+                    null,
+                    this.props.title
+                )
+            );
+        }
+    });
+
     var Quiz = React.createClass({
         propTypes: {
             data: React.PropTypes.array.isRequired
@@ -21,7 +41,7 @@
                     React.createElement(
                         'div',
                         { className: 'col-md-4' },
-                        React.createElement('img', { src: this.state.actor.imageUrl, className: 'imageUrl col-md-3' })
+                        React.createElement('img', { src: this.state.imageUrl, className: 'imageUrl col-md-3' })
                     ),
                     React.createElement(
                         'div',

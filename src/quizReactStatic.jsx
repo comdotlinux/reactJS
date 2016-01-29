@@ -1,5 +1,17 @@
 (function(){
 	'use strict';
+
+	var Movie = React.createClass({
+		propTypes: {
+			title: React.PropTypes.string.isRequired
+		},
+		handleClick:function(){
+			this.props.onMovieSelected(this.props.title);	
+		},
+		render: function () {
+			return <div onClick={this.handleClick} className="answer"><h4>{this.props.title}</h4></div>;
+		}
+	});
 	
 	var Quiz = React.createClass({
 		propTypes:{
@@ -15,7 +27,7 @@
 			return (<div>
 						<div className="row">
 							<div className="col-md-4">
-								<img src={this.state.actor.imageUrl} className="imageUrl col-md-3"/>
+								<img src={this.state.imageUrl} className="imageUrl col-md-3"/>
 							</div>
 							<div className="col-md-7">
 								{this.state.movies.map(function(movie){
