@@ -21,13 +21,13 @@
 				return _.extend({
 					bgClass:'neutral',
 					showContinue:false
-			});
+			},this.props.data.selectMovie());
 		},
 		render:function(){
 			return (<div>
 						<div className="row">
 							<div className="col-md-4">
-								<img src={this.state.imageUrl} className="imageUrl col-md-3"/>
+								<img src={this.state.actor.imageUrl} className="imageUrl col-md-3"/>
 							</div>
 							<div className="col-md-7">
 								{this.state.movies.map(function(movie){

@@ -29,7 +29,7 @@
             return _.extend({
                 bgClass: 'neutral',
                 showContinue: false
-            });
+            }, this.props.data.selectMovie());
         },
         render: function () {
             return React.createElement(
@@ -41,7 +41,7 @@
                     React.createElement(
                         'div',
                         { className: 'col-md-4' },
-                        React.createElement('img', { src: this.state.imageUrl, className: 'imageUrl col-md-3' })
+                        React.createElement('img', { src: this.state.actor.imageUrl, className: 'imageUrl col-md-3' })
                     ),
                     React.createElement(
                         'div',
