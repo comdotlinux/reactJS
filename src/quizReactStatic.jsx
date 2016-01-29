@@ -31,7 +31,7 @@
 							</div>
 							<div className="col-md-7">
 								{this.state.movies.map(function(movie){
-									return <Movie onMovieSelected={this.handleMovieSelected} key={movie} id={movie}/>
+									return <Movie onMovieSelected={this.handleMovieSelected} key={movie} id={movie} title={movie}/>
 								},this)}
 							</div>
 							<div className={"col-md-1" + this.state.bgClass}></div>

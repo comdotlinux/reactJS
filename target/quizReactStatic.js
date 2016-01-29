@@ -47,7 +47,7 @@
                         'div',
                         { className: 'col-md-7' },
                         this.state.movies.map(function (movie) {
-                            return React.createElement(Movie, { onMovieSelected: this.handleMovieSelected, key: movie, id: movie });
+                            return React.createElement(Movie, { onMovieSelected: this.handleMovieSelected, key: movie, id: movie, title: movie });
                         }, this)
                     ),
                     React.createElement('div', { className: "col-md-1" + this.state.bgClass }),
