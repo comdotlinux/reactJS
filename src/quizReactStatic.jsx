@@ -20,9 +20,15 @@
 		getInitialState:function(){
 				return _.extend({
 					bgClass:'neutral',
-					showContinue:false
+					showContinue:false					
 			},this.props.data.selectMovie());
 		},
+		/*shouldComponentUpdate:function(nextProps, nextState){
+			var jsonData = null
+			getData(1, jsonData);
+			nextState.jd = jsonData;
+				return true;
+		},*/
 		render:function(){
 			return (<div>
 						<div className="row">
@@ -105,7 +111,27 @@ var AddMovieForm = React.createClass({
                     </div>;
         }
     });
-
+	var getData = function(returnData){
+		var url = 'http://api.themoviedb.org/3/',
+        mode = 'movie/popular?page=',
+        pgn = 1,
+        key = '&api_key=apikey',
+		rawJsonData = null;
+		
+		   $.ajax({
+            type: 'GET',
+            url: url + mode + pgn + key,
+            async: false,
+            jsonpCallback: 'testing',
+            contentType: 'application/json',
+            dataType: 'jsonp',
+            success: returnData,
+            error: function(e) {
+                console.log(e.message);
+            }
+        });
+	}
+	
     var data = [
         {
             name: 'Brad Pitt', 
