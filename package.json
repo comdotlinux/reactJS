@@ -1,10 +1,16 @@
 {
-	"name": "ReactJS",
-	"version": "1.0.0",
-	"babel": {
-		"presets": ["react", "es2015"]
-	},
-	"devDependencies": {
-		"babel-cli": "^6.4.5"
-	}
+  "name": "ReactJS",
+  "version": "1.0.0",
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.5"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0"
+  }
 }
